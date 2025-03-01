@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://receiving.mssql.somee.com:1433;databaseName=receiving;encrypt=true;trustServerCertificate=true;
+    username: jesusvalenzuelag_SQLLogin_1
+    password: ks3ftan5w2
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
