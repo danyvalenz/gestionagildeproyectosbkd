@@ -30,5 +30,45 @@ public abstract class GenericEntity {
 
     @Column(name = "estatus")
     @Comment("Estado de registro (1: Activo, 0: Inactivo (borrado lógico))")
-    private short estatus;
+    private Short estatus;
+
+    public LocalDateTime getAuditoriafechaHora() {
+        return AuditoriafechaHora;
+    }
+
+    public void setAuditoriafechaHora(LocalDateTime auditoriafechaHora) {
+        AuditoriafechaHora = auditoriafechaHora;
+    }
+
+    public Long getAuditoriaUsuarioId() {
+        return AuditoriaUsuarioId;
+    }
+
+    public void setAuditoriaUsuarioId(Long auditoriaUsuarioId) {
+        AuditoriaUsuarioId = auditoriaUsuarioId;
+    }
+
+    public String getAuditoriaIpHostSesion() {
+        return AuditoriaIpHostSesion;
+    }
+
+    public void setAuditoriaIpHostSesion(String auditoriaIpHostSesion) {
+        AuditoriaIpHostSesion = auditoriaIpHostSesion;
+    }
+
+    public TipoOperacionAuditoria getAuditoriaTipoOreacion() {
+        return auditoriaTipoOreacion;
+    }
+
+    public void setAuditoriaTipoOreacion(TipoOperacionAuditoria auditoriaTipoOreacion) {
+        this.auditoriaTipoOreacion = auditoriaTipoOreacion;
+    }
+
+    public short getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(Short estatus) {
+        this.estatus = estatus;
+    }
 }

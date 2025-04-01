@@ -48,4 +48,9 @@ public class Items extends GenericEntity {
     @OneToMany(mappedBy = "items")
     @JsonManagedReference
     private List<Existencias> existencias;
+
+    @OneToMany(mappedBy = "item")
+    @JsonManagedReference
+    private List<Kits> kits;
+
 }

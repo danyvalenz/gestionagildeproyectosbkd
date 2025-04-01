@@ -1,11 +1,51 @@
-spring:
+sqlserver:
   datasource:
-    url: jdbc:sqlserver://receiving.mssql.somee.com:1433;databaseName=receiving;encrypt=true;trustServerCertificate=true;
+    jdbcUrl: jdbc:sqlserver://receiving.mssql.somee.com:1433;databaseName=receiving;encrypt=true;trustServerCertificate=true;
     username: jesusvalenzuelag_SQLLogin_1
     password: ks3ftan5w2
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     database-platform: org.hibernate.dialect.SQLServerDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
+
+postgresql:
+  datasource:
+    jdbcUrl: jdbc:postgresql://34.121.108.239:5432/receivingpg?currentSchema=public&ApplicationName=gestionagil&socketTimeout=30&intergratedSecurity=true&characterEncoding=UTF-8&stringtype=unspecified
+    username: postgres
+    password: Kk6hsg6y7ixp
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
+    api-docs:
+      path: /api-docs
+    version: 2.3.0
+server:
+  port: 8081
+
+quartz:
+  jobCron: 0 * * ? * *
+  jobGroup: mail-quartz-group
+  loadDataGroup: Load-data-quartz-group
+## MailProperties
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jesusvalenzuelag35@gmail.com
+    password: bscxoqjxtovcrfky
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+

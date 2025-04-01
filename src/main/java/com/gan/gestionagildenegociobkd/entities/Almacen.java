@@ -3,14 +3,12 @@ package com.gan.gestionagildenegociobkd.entities;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.gan.gestionagildenegociobkd.entities.base.GenericEntity;
 import jakarta.persistence.*;
-import lombok.Data;
-import org.hibernate.annotations.Comment;
+
 
 import java.util.List;
 
 @Entity
 @Table(name = "almacen")
-@Data
 public class Almacen extends GenericEntity {
 
     @Id
@@ -24,5 +22,27 @@ public class Almacen extends GenericEntity {
     @JsonManagedReference
     private List<Existencias> existencias;
 
+    public Long getAlmancenId() {
+        return almancenId;
+    }
 
+    public void setAlmancenId(Long almancenId) {
+        this.almancenId = almancenId;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public List<Existencias> getExistencias() {
+        return existencias;
+    }
+
+    public void setExistencias(List<Existencias> existencias) {
+        this.existencias = existencias;
+    }
 }
